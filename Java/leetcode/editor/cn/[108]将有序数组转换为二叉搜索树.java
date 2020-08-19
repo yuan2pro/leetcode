@@ -30,7 +30,7 @@ package leetcode.editor.cn;
  * TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution108 {
     public TreeNode sortedArrayToBST(int[] nums) {
         return dfs(nums, 0, nums.length - 1);
     }
