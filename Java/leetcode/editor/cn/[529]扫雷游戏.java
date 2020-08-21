@@ -74,7 +74,7 @@ package leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution529 {
     // 定义 8 个方向
     int[] dx = {-1, 1, 0, 0, -1, 1, -1, 1};
     int[] dy = {0, 0, -1, 1, -1, 1, 1, -1};
