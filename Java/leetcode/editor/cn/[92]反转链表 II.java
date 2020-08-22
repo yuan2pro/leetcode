@@ -24,7 +24,7 @@ import java.util.Stack;
  * ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution92 {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (head == null) {
             return null;
