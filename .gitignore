@@ -27,3 +27,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 company
+.idea/
+.vscode/
+Java/out/
+Java/leetcode/editor/cn/doc/
+Java/leetcode/editor/cn/all.json
+Java/leetcode/editor/cn/translation.json
+Python/排序/
+Python/搜索/
+Python/easy/
+Python/hard/
+Python/middle/
