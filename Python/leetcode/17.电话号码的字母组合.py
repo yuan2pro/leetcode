@@ -28,6 +28,4 @@ class Solution:
         groups = (phoneMap[digit] for digit in digits)
         return ["".join(combination) for combination in itertools.product(*groups)]
 
-
-Solution().letterCombinations("23")
 # @lc code=end
