@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution24 {
     static final int TARGET = 24;
     static final double EPSILON = 1e-6;
     static final int ADD = 0, MULTIPLY = 1, SUBTRACT = 2, DIVIDE = 3;
