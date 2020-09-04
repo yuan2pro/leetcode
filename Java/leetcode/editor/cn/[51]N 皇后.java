@@ -100,7 +100,6 @@ class Solution51 {
             row.append(".".repeat(Math.max(0, n)));
             row.replace(num, num + 1, "Q");
             board.add(row.toString());
-
         }
         return board;
     }
