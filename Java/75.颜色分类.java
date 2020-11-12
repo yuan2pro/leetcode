@@ -22,9 +22,7 @@ class Solution {
                 nums[p0] = tmp;
                 p0++;
             }
-
         }
-
     }
 }
 // @lc code=end
