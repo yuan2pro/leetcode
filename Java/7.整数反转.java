@@ -1,0 +1,26 @@
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+
+/*
+ * @lc app=leetcode.cn id=7 lang=java
+ *
+ * [7] 整数反转
+ */
+
+// @lc code=start
+class Solution {
+    public int reverse(int x) {
+        long r = 0;
+        while (x != 0) {
+            r = r * 10 + x % 10;
+            x /= 10;
+        }
+        if (r >= Integer.MIN_VALUE && r <= Integer.MAX_VALUE) {
+            return (int) r;
+        } else {
+            return 0;
+        }
+    }
+}
+// @lc code=end
