@@ -1,40 +1,36 @@
-# Created by .ignore support plugin (hsz.mobi)
-### macOS template
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Icon must end with two \r
-Icon
+### IntelliJ IDEA ###
+.idea/*
+*.iws
+*.iml
+*.ipr
 
-# Thumbnails
-._*
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-company
-.idea/
+### VS Code ###
 .vscode/
-Java/out/
-Java/leetcode/editor/cn/doc/
-Java/leetcode/editor/cn/all.json
-Java/leetcode/editor/cn/translation.json
-Python/排序/
-Python/搜索/
-Python/easy/
-Python/hard/
-Python/middle/
+
+### Mac OS ###
+.DS_Store
+._*
