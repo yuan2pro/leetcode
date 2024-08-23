@@ -1,6 +1,8 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -232,6 +234,31 @@ public class Solution {
         }
         return dp[amount];
     }
+
+    // 13. Roman to Integer
+    public int romanToInt(String s) {
+        Map<Character, Integer> romanToIntMap = new HashMap<>();
+        romanToIntMap.put('I', 1);
+        romanToIntMap.put('V', 5);
+        romanToIntMap.put('X', 10);
+        romanToIntMap.put('L', 50);
+        romanToIntMap.put('C', 100);
+        romanToIntMap.put('D', 500);
+        romanToIntMap.put('M', 1000);
+        int result = 0;
+        int preValue = 0;
+        for(char c : s.toCharArray()) {
+            int value = romanToIntMap.get(c);
+            if (preValue < value) {
+                result += value - 2 * preValue;
+            }else{
+                result += value;
+            }
+            preValue = value;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
     }
