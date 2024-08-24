@@ -247,11 +247,11 @@ public class Solution {
         romanToIntMap.put('M', 1000);
         int result = 0;
         int preValue = 0;
-        for(char c : s.toCharArray()) {
+        for (char c : s.toCharArray()) {
             int value = romanToIntMap.get(c);
             if (preValue < value) {
                 result += value - 2 * preValue;
-            }else{
+            } else {
                 result += value;
             }
             preValue = value;
@@ -259,7 +259,59 @@ public class Solution {
         return result;
     }
 
+    // 125. Valid Palindrome
+    public boolean isPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+            }
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+            }
+            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    // 58. Length of Last Word
+    public int lengthOfLastWord(String s) {
+        s = s.strip();
+        int len = s.length() - 1;
+        while (len >= 0 && s.charAt(len) != ' ') {
+            len--;
+        }
+        return s.length() - len - 1;
+    }
+
+    // 14. Longest Common Prefix
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null && strs.length == 0) {
+            return "";
+        }
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) {
+                    return "";
+                }
+            }
+        }
+        return prefix;
+    }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+        String[] strings = {"bc", "bfuabc", "bfavcvcbvcabc"};
+        System.out.println(solution.longestCommonPrefix(strings));
+
     }
 }
