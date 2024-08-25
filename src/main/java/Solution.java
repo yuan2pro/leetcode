@@ -308,10 +308,122 @@ public class Solution {
         return prefix;
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        String[] strings = {"bc", "bfuabc", "bfavcvcbvcabc"};
-        System.out.println(solution.longestCommonPrefix(strings));
-
+    // 28. Find the Index of the First Occurrence in a String
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
     }
+
+    // 392. Is Subsequence
+    public boolean isSubsequence(String s, String t) {
+        int i = 0;
+        int j = 0;
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) != t.charAt(j)) {
+                j++;
+            } else {
+                i++;
+                j++;
+            }
+        }
+        return i == s.length();
+    }
+
+
+    // 383. Ransom Note
+    public boolean canConstruct(String ransomNote, String magazine) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (Character ch : magazine.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+        for (Character ch : ransomNote.toCharArray()) {
+            if (!map.containsKey(ch)) {
+                return false;
+            } else {
+                Integer i = map.get(ch);
+                if (i == 0) {
+                    return false;
+                } else {
+                    map.put(ch, i - 1);
+                }
+            }
+        }
+        return true;
+    }
+
+    // 205.Isomorphic Strings
+    public boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        Map<Character, Character> mapSt = new HashMap<>();
+        Map<Character, Character> mapTs = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char sc = s.charAt(i);
+            char tc = t.charAt(i);
+            if (mapSt.containsKey(sc)) {
+                if (mapSt.get(sc) != tc) {
+                    return false;
+                }
+            } else {
+                mapSt.put(sc, tc);
+            }
+            if (mapTs.containsKey(tc)) {
+                if (mapTs.get(tc) != sc) {
+                    return false;
+                }
+            } else {
+                mapTs.put(tc, sc);
+            }
+        }
+        return true;
+    }
+
+    // 290.Word Pattern
+    public boolean wordPattern(String pattern, String s) {
+        String[] words = s.split(" ");
+        if (pattern.length() != words.length) {
+            return false;
+        }
+
+        HashMap<Character, String> charToWord = new HashMap<>();
+        HashMap<String, Character> wordToChar = new HashMap<>();
+
+        for (int i = 0; i < pattern.length(); i++) {
+            char c = pattern.charAt(i);
+            String word = words[i];
+
+            if (charToWord.containsKey(c)) {
+                if (!charToWord.get(c).equals(word)) {
+                    return false;
+                }
+            } else {
+                if (wordToChar.containsKey(word)) {
+                    return false;
+                }
+                charToWord.put(c, word);
+                wordToChar.put(word, c);
+            }
+        }
+        return true;
+    }
+
+    // 242.Valid Anagram
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (Character c : t.toCharArray()) {
+            if (map.containsKey(c) && map.get(c) > 0) {
+                map.put(c, map.get(c) - 1);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
